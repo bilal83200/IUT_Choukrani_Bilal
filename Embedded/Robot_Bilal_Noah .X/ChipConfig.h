@@ -1,6 +1,11 @@
+/* 
+ * File:   ChipConfig.h
+ */
+
 #ifndef CHIPCONFIG_H
 #define	CHIPCONFIG_H
 
+#define FCY 60000000
 void InitOscillator();
 
-#endif
+#endif	/* CHIPCONFIG_H */

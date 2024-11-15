@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendedSerialPort", "ExtendedSerialPort\ExtendedSerialPort.csproj", "{B4341631-BA9F-4EF4-A265-A041777367AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Robot", "Robot\Robot.csproj", "{239528EB-5024-4E9C-B0AF-CA6F43A17411}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobotInterface", "RobotInterface\RobotInterface.csproj", "{C52C4038-0AFA-4165-B727-C55970136F1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4341631-BA9F-4EF4-A265-A041777367AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4341631-BA9F-4EF4-A265-A041777367AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4341631-BA9F-4EF4-A265-A041777367AB}.Debug|x64.ActiveCfg = Debug|x64
+		{B4341631-BA9F-4EF4-A265-A041777367AB}.Debug|x64.Build.0 = Debug|x64
+		{B4341631-BA9F-4EF4-A265-A041777367AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4341631-BA9F-4EF4-A265-A041777367AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4341631-BA9F-4EF4-A265-A041777367AB}.Release|x64.ActiveCfg = Release|x64
+		{B4341631-BA9F-4EF4-A265-A041777367AB}.Release|x64.Build.0 = Release|x64
+		{239528EB-5024-4E9C-B0AF-CA6F43A17411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{239528EB-5024-4E9C-B0AF-CA6F43A17411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{239528EB-5024-4E9C-B0AF-CA6F43A17411}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{239528EB-5024-4E9C-B0AF-CA6F43A17411}.Debug|x64.Build.0 = Debug|Any CPU
+		{239528EB-5024-4E9C-B0AF-CA6F43A17411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{239528EB-5024-4E9C-B0AF-CA6F43A17411}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239528EB-5024-4E9C-B0AF-CA6F43A17411}.Release|x64.ActiveCfg = Release|Any CPU
+		{239528EB-5024-4E9C-B0AF-CA6F43A17411}.Release|x64.Build.0 = Release|Any CPU
+		{C52C4038-0AFA-4165-B727-C55970136F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C52C4038-0AFA-4165-B727-C55970136F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C52C4038-0AFA-4165-B727-C55970136F1E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C52C4038-0AFA-4165-B727-C55970136F1E}.Debug|x64.Build.0 = Debug|Any CPU
+		{C52C4038-0AFA-4165-B727-C55970136F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C52C4038-0AFA-4165-B727-C55970136F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C52C4038-0AFA-4165-B727-C55970136F1E}.Release|x64.ActiveCfg = Release|Any CPU
+		{C52C4038-0AFA-4165-B727-C55970136F1E}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DABA411A-FB7F-44AA-8144-380AE014AD13}
+	EndGlobalSection
+EndGlobal

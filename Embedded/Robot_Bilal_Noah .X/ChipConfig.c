@@ -57,7 +57,6 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
-
 void InitOscillator() {
 
     //F_IN = 7.37 MHz    
@@ -89,7 +88,7 @@ void InitOscillator() {
 
     ACLKCON3bits.ENAPLL = 1;
     while (ACLKCON3bits.APLLCK != 1);
-    
+
     // Wait for PLL to lock
     while (OSCCONbits.LOCK != 1);
 
