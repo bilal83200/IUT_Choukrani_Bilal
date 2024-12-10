@@ -14,6 +14,7 @@ using System.Windows.Threading;
 using ExtendedSerialPort_NS;
 using Robot_NS;
 
+
 namespace RobotInterface
 {
     /// <summary>
@@ -110,5 +111,75 @@ namespace RobotInterface
         {
 
         }
+
+
+
+
+        // Fonction pour calculer le checksum
+        static byte CalculateChecksum(int msgFunction, int msgPayloadLength, byte[] msgPayload)
+        {
+            byte checksum = 0;
+
+            
+            checksum ^= 0xFE; 
+            checksum ^= (byte)(msgFunction >> 8); 
+            checksum ^= (byte)(msgFunction & 0xFF); 
+
+            
+            checksum ^= (byte)(msgPayloadLength >> 8); 
+            checksum ^= (byte)(msgPayloadLength & 0xFF); 
+
+            
+            foreach (byte b in msgPayload)
+            {
+                checksum ^= b;
+            }
+
+            return checksum;
+        }
+
+       
+        static void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
+        {
+            
+            byte[] frame = new byte[5 + msgPayloadLength]; 
+            int index = 0;
+
+            
+            frame[index++] = 0xFE;
+
+            
+            frame[index++] = (byte)(msgFunction >> 8); 
+            frame[index++] = (byte)(msgFunction & 0xFF); 
+
+            
+            frame[index++] = (byte)(msgPayloadLength >> 8); 
+            frame[index++] = (byte)(msgPayloadLength & 0xFF); 
+
+           
+            Array.Copy(msgPayload, 0, frame, index, msgPayloadLength);
+            index += msgPayloadLength;
+
+            
+            byte checksum = CalculateChecksum(msgFunction, msgPayloadLength, msgPayload);
+            frame[index] = checksum;
+
+            
+            Console.WriteLine("Trame envoyée : " + BitConverter.ToString(frame));
+        }
+
+        static void Main(string[] args)
+        {
+            
+            int msgFunction = 0x0080;
+            string payloadString = "Bonjour";
+            byte[] msgPayload = Encoding.ASCII.GetBytes(payloadString);
+            int msgPayloadLength = msgPayload.Length;
+
+            
+            UartEncodeAndSendMessage(msgFunction, msgPayloadLength, msgPayload);
+        }
     }
-}
+
+
+}                   

@@ -12,6 +12,14 @@
       <itemPath>PWM.h</itemPath>
       <itemPath>ADC.h</itemPath>
       <itemPath>main.h</itemPath>
+      <itemPath>CB_RX1.h</itemPath>
+      <itemPath>CB_TX1.h</itemPath>
+      <itemPath>UART.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <itemPath>Makefile</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -25,16 +33,17 @@
       <itemPath>main.c</itemPath>
       <itemPath>timer.c</itemPath>
       <itemPath>Robot.c</itemPath>
-      <itemPath>ToolBox.c</itemPath>
       <itemPath>PWM.c</itemPath>
       <itemPath>ADC.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <itemPath>Makefile</itemPath>
+      <itemPath>CB_RX1.c</itemPath>
+      <itemPath>CB_TX1.c</itemPath>
+      <itemPath>UART.c</itemPath>
+      <itemPath>ToolBox.c</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>D:/Tp_Robot_Choukrani_Capre/Embedded/Robot_Bilal_Noah.X</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
