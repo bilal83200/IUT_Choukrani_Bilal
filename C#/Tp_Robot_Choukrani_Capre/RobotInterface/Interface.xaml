@@ -30,7 +30,7 @@
         </GroupBox>
         <Button x:Name="buttonEnvoyer" Grid.Column="1" Content="Envoyer" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="100" Click="buttonEnvoyer_Click"/>
         <Button x:Name="buttonSupprimer" Grid.Column="3" Content="Supprimer" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="100" Click="buttonSupprimer_Click"/>
-        <Button x:Name="buttonTest" Grid.Column="2" Content="Test" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="100" Click="buttonTest_Click"/>
+        <Button x:Name="buttonTest" Grid.Column="2" Content="Test" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="30" Width="100" Click="buttonTest_Click" />
     </Grid>
 
 </Window>
