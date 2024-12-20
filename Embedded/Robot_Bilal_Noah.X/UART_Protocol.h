@@ -1,23 +1,10 @@
-/* 
- * File:   UART_Protocol.h
- * Author: E306-PC6
- *
- * Created on 16 décembre 2024, 14:28
- */
-
 #ifndef UART_PROTOCOL_H
 #define	UART_PROTOCOL_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
-
-
-
-#ifdef	__cplusplus
-}
-#endif
+unsigned char UartCalculateChecksum(int msgFunction,int msgPayloadLength, unsigned char* msgPayload);
+void UartEncodeAndSendMessage(int msgFunction,int msgPayloadLength, unsigned char* msgPayload);
+void UartProcessDecodedMessage(int function,int payloadLength, unsigned char* payload);
+void UartDecodeMessage(unsigned char c);
 
 #endif	/* UART_PROTOCOL_H */
 

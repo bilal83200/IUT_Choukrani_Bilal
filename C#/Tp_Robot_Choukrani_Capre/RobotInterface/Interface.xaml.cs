@@ -306,13 +306,31 @@ namespace RobotInterface
                     break;
             }
         }
-        void ProcessDecodedMessage(int msgFunction,int msgPayloadLength, byte[] msgPayload)
+        void ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
-            
+            byte checksum = 0;
+
+
+            checksum ^= 0xFE;
+            checksum ^= (byte)(msgFunction >> 8);
+            checksum ^= (byte)(msgFunction & 0xFF);
+
+
+            checksum ^= (byte)(msgPayloadLength >> 8);
+            checksum ^= (byte)(msgPayloadLength & 0xFF);
+
+
+            foreach (byte b in msgPayload)
+            {
+                checksum ^= b;
+            }
+
+            return checksum;
+
+
+
 
         }
-
-
     }
 }
 
