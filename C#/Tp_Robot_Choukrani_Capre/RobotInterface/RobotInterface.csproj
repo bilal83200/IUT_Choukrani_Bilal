@@ -10,10 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="SciChart" Version="8.5.0.28148" />
     <PackageReference Include="System.IO.Ports" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Users\E306-PC4\Downloads\WpfOscilloscope (1)\WpfOscilloscope\WpfOscilloscopeControl.csproj" />
+    <ProjectReference Include="..\..\..\..\..\Users\E306-PC6\Downloads\WpfOscilloscope\WpfOscilloscope\WpfOscilloscopeControl.csproj" />
     <ProjectReference Include="..\ExtendedSerialPort\ExtendedSerialPort.csproj" />
     <ProjectReference Include="..\Robot\Robot.csproj" />
   </ItemGroup>

@@ -11,9 +11,15 @@ using System.Windows.Shapes;
 using System.IO.Ports;
 using System.Windows.Threading;
 
+
 using ExtendedSerialPort_NS;
 using Robot_NS;
 using System.Net.NetworkInformation;
+using SciChart.Charting.Visuals;
+using static SciChart.Drawing.Utility.PointUtil;
+using WpfOscilloscopeControl;
+using System.Security.Cryptography.X509Certificates;
+using SciChart.Data.Model;
 
 
 
@@ -28,9 +34,11 @@ namespace RobotInterface
         public DispatcherTimer timerAffichage;
         public ExtendedSerialPort serialPort1;
         public Robot robot = new Robot();
-
+        int timestamp = 0;
+        float xvalue = 0;
         public Interface()
         {
+            SciChartSurface.SetRuntimeLicenseKey("VKOUDZGU6WndydcBQTqx4px2yWsaXqbn+hIKIxA5AE7Vii9ai5FosulEM8j2NYkBkJFZ6Ei2pFlUIV8aoE7bc3FfN3QRUwtvCaGqmrseTOeNsCz9p4t2CBk7TjcTPW7JTOYnIH/UjoRxi8b0BK6MDi8XJUS98gXSybDb/cn070Y5voaiKvusgmvvAOjcwuGcPQuyV7vJlzqh3LqLL3TqJnJMTdGmM00s8VFb7U+sxfbzT/h8SQuY13u/3i5sSz0VEI6YYJeiiX3oMajfHwA/SGyyDFTZmDAAfILtohF7ag+hnEpUDqhudgYjXqVwVtc0oUZNT8Ghtx0ek2bjkQukPtp8/44M1wiOdZORUOCAxeh3oTPZKjEGRjkpbN/UKprgi8/Xvf11BuXzTJLXklmSZLFRsgxcx3nvQVwae9oY5HABtwOk+q/bdsNBKyPmhjNLM1+y5qSlpIQlHzm/EdvN44AX5iR43d4dxfLx9QN7KHvaUbHpqNXVKLUsq0g1g6mEGntw5fXj");
             InitializeComponent();
             serialPort1 = new ExtendedSerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
@@ -41,19 +49,33 @@ namespace RobotInterface
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
 
+
+            oscilloSpeed = new WpfOscilloscope() ;
+            oscilloSpeed.isDisplayActivated = true;
+            oscilloSpeed.AddOrUpdateLine(0, 200, "SpeedLineaire");
+            oscilloSpeed.ChangeLineColor(0, Colors.Blue);
+            timestamp = 0;
+
         }
 
         private void TimerAffichage_Tick(object? sender, EventArgs e)
         {
-            textboxReception.Text += robot.receivedText;
+            timestamp += 100;
+            xvalue += 1;
+            
             robot.receivedText = "";
+            oscilloSpeed.AddPointToLine(0, timestamp,xvalue);
+
         }
 
         bool toggle = false;
         bool suppr = false;
         public void SerialPort1_DataReceived(object? sender, DataReceivedArgs e)
         {
+            
+           textboxReception.Text += robot.receivedText; 
             robot.receivedText = Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
+            
         }
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
@@ -306,7 +328,7 @@ namespace RobotInterface
                     break;
             }
         }
-        void ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
+         private byte ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
             byte checksum = 0;
 

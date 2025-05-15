@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Github/IUT_Choukrani_Bilal/Embedded/Robot_Bilal_Noah.X/UART_Protocol.h</file>
             <file>file:/C:/Github/IUT_Choukrani_Bilal/Embedded/Robot_Bilal_Noah.X/UART_Protocol.c</file>
+            <file>file:/C:/Github/IUT_Choukrani_Bilal/Embedded/Robot_Bilal_Noah.X/IO.c</file>
+            <file>file:/C:/Github/IUT_Choukrani_Bilal/Embedded/Robot_Bilal_Noah.X/UART_Protocol.h</file>
+            <file>file:/C:/Github/IUT_Choukrani_Bilal/Embedded/Robot_Bilal_Noah.X/QEI.h</file>
+            <file>file:/C:/Github/IUT_Choukrani_Bilal/Embedded/Robot_Bilal_Noah.X/QEI.c</file>
+            <file>file:/C:/Github/IUT_Choukrani_Bilal/Embedded/Robot_Bilal_Noah.X/ADC.h</file>
             <file>file:/C:/Github/IUT_Choukrani_Bilal/Embedded/Robot_Bilal_Noah.X/UART.h</file>
+            <file>file:/C:/Github/IUT_Choukrani_Bilal/Embedded/Robot_Bilal_Noah.X/PWM.c</file>
         </group>
     </open-files>
 </project-private>
